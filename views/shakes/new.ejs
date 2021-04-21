@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+    <form id="new-form" action="/shakes" method="POST">
+        <label>Product Type:</label>
+            <input type="text" name="product">
+        <label>Flavor:</label>
+            <input type="text" name="flavor">
+        <label>Calories</label>
+            <select name="calories">
+                <option value="100+">100+</option>
+                <option value="200+">200+</option>
+                <option value="300+">300+</option>
+                <option value="400+">400+</option>
+                <option value="500+">500+</option>
+            </select>
+        
+        <label>Price $:</label>
+            <input type="text" name="price">
+        <label>Good Quality</label>
+            <input type="checkbox" name="quality" checked>
+            <input type="submit" value="Add Comment">
+    </form>
+
+<%- include('../partials/footer') %>
+   

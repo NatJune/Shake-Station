@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+    <table id="list">
+        <thead>
+            <tr>
+            <th>product type</th>
+            <th>flavor</th>
+            <th>calories</th>
+            <th>price</th>
+            <th>quality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% shakes.forEach(function(s) { %>
+                <tr>
+                    <td><%=s.productType%></td>
+                    <td><%=s.flavor %></td>
+                    <td><%=s.calories %></td>
+                    <td><a href="/shakes/<%= s._id %>">DETAILS</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+ <%- include('../partials/footer') %>
