@@ -6,6 +6,7 @@ require('./config/database');
 const indexRouter = require('./routes/index');
 const shakesRouter = require('./routes/shakes');
 const reviewsRouter = require('./routes/reviews');
+const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(express.static('public'));
 app.use('/', indexRouter);
 app.use('/shakes', shakesRouter);
 app.use('/', reviewsRouter);
+app.use('/user', usersRouter);
+
 
 
 app.listen(port, function() {

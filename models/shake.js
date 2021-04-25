@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema; // shortcut variable
+const Schema = mongoose.Schema; 
 
 
 const reviewSchema = new Schema ({
@@ -10,7 +10,7 @@ const reviewSchema = new Schema ({
       max: 5,
       default: 5
     } 
-});
+}, { timestamps: true });
     
 
  const shakeSchema = new Schema ({
@@ -38,19 +38,20 @@ const reviewSchema = new Schema ({
     },
     comment: {
     type: String,
-    required: true
+    required: true,
     },
+    reviews: [reviewSchema]
+    
+  }, {
+    timestamps: true
+  });
 
- });
+
     
 
 
 module.exports = mongoose.model('Shake', shakeSchema);
 
-/*
-    .create() - creates a document
-    .find()  - finds documents
-    .findById() - find a document by it's _id property
-    .findByIdAndUpdate() - find a document by it's _id property and update
-    .findByIdAndDelete() - delete a document
-*/
+
+
+

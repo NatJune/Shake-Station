@@ -19,6 +19,16 @@
                     <td><a href="/shakes/<%= s._id %>">DETAILS</a></td>
                 </tr>
             <% }); %>
+            <li>
+                <form action="/shakes/<%= shakes %>?_method=DELETE" method="POST">
+                    <button type="submit">🗑</button>
+                </form>
+                <a href="/shakes/<%= shakes %>">
+                    <%= shakes.text %>
+                    -
+                    <%= shakes.done ? 'done' : 'not done' %>
+                </a>
+            </li>
         </tbody>
     </table>
  <%- include('../partials/footer') %>
