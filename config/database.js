@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb+srv://admin:abc1234@cluster0.oc1n0.mongodb.net/shake-station-app?retryWrites=true&w=majority';
+const connectionString = 'mongodb+srv://admin:abc1234@cluster0.fxf8b.mongodb.net/shake-station-app?retryWrites=true&w=majority';
 
 
 mongoose.connect(connectionString, {

@@ -7,6 +7,8 @@ module.exports = {
     index,
     show,
     create,
+    update,
+    edit,
     delete: deleteShake,
   
   };
@@ -40,10 +42,22 @@ module.exports = {
       res.redirect('/shakes');
     });
   }
-  
+   function update(req,res) {
+     Shake.findByIdAndUpdate(req.params.id, function(err, shake) {
+       res.render('shakes/update', {title: 'Shake update', shake});
+     });
+   }
+   function edit(req, res) {
+   Shake.findById(req.params.id, function(err, shake) {
+      if (!shake.user.equals(req.user._id)) return res.redirect('/shakes');
+      res.render('shakes/edit', {shake});
+    });
+  }
   function deleteShake(req,res) {
-    shake.deleteOne(req.params.id);
+    Shake.findByIdAndDelete(req.params.id, function(err, shake){
     res.redirect('/shakes');
+    });
+    
   }
   
 

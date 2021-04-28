@@ -2,9 +2,9 @@
 
     <form id="new-form" action="/shakes" method="POST">
         <label>Product Type:</label>
-            <input type="text" name="product">
+            <input type="text" name="product" required>
         <label>Flavor:</label>
-            <input type="text" name="flavor">
+            <input type="text" name="flavor" required>
         <label>Calories</label>
             <select name="calories">
                 <option value="100+">100+</option>
@@ -15,11 +15,11 @@
             </select>
         
         <label>Price $:</label>
-            <input type="text" name="price">
+            <input type="text" name="price" required>
         <label>Comment:</label>
             <input type="text" name="comment">
         <label>Good Quality</label>
-            <input type="checkbox" name="quality" checked>
+            <input type="checkbox" name="quality" checked required>
             <input type="submit" value="Add Comment">
     </form>
 

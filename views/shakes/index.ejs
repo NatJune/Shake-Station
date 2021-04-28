@@ -3,7 +3,7 @@
     <table id="list">
         <thead>
             <tr>
-            <th>product type</th>
+            <th>productType</th>
             <th>flavor</th>
             <th>calories</th>
             <th>price</th>
@@ -16,19 +16,11 @@
                     <td><%=s.productType%></td>
                     <td><%=s.flavor %></td>
                     <td><%=s.calories %></td>
+                    <td><%=s.price %></td>
+                    <td><%=s.quality %></td>
                     <td><a href="/shakes/<%= s._id %>">DETAILS</a></td>
                 </tr>
             <% }); %>
-            <li>
-                <form action="/shakes/<%= shakes %>?_method=DELETE" method="POST">
-                    <button type="submit">🗑</button>
-                </form>
-                <a href="/shakes/<%= shakes %>">
-                    <%= shakes.text %>
-                    -
-                    <%= shakes.done ? 'done' : 'not done' %>
-                </a>
-            </li>
         </tbody>
     </table>
  <%- include('../partials/footer') %>

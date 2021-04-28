@@ -14,17 +14,15 @@ const reviewSchema = new Schema ({
     
 
  const shakeSchema = new Schema ({
+  
     product: {
       type: String,
-      required: true
     },
     flavor: {
       type: String,
-      required: true
     }, 
     calories: {
-      type:String,
-      required: true       
+      type:String,  
     },
     price: {
         type: Number,
@@ -32,13 +30,11 @@ const reviewSchema = new Schema ({
         max: 200,
         default: 200 
     },
-     quality: {
+    quality: {
     type: String,
-    required: true
     },
     comment: {
     type: String,
-    required: true,
     },
     reviews: [reviewSchema]
     

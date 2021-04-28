@@ -1,20 +1,33 @@
 <%- include('../partials/header') %>
 <% if(user) { %>
-
-    <% if (user) { %>
- <main>
+        <thead>
+            <tr>
+            <th>name:</th>
+            <th>email:</th>
+            <th>avatarURL:</th>
+            <th>googleId</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tbody>
+                <% shake.user.forEach(user => { %>
+                  <tr>
+                    <td><a href="/user/<%=user_.id%>">User Login</a></td>
+                    <td><%= user.name%></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.avatarURL %></td>
+                    <td><%= user.googleId %></td>
+                    <td><form action="/user/<%= user._id %>?_method=DELETE" method="POST">  
+                    <input type="submit" value="delete"></input>
+                    </form>
+                  </td>
+                  </tr>
+                <% }) %>
+              </tbody>
+        </tbody>
     
-<h1>My Shakes</h1>
 
- 
-  
-         
-<div class='main-cntr'>
-<div class='pls-login'>
- <a href="/auth/google">Login for Shake Review</a>
-</div>
-</div>
-<% } %>
+
         
 
 

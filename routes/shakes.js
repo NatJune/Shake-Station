@@ -6,6 +6,8 @@ router.get('/', shakesCtrl.index);
 router.get('/new', shakesCtrl.new);
 router.get('/:id', shakesCtrl.show);
 router.post('/', shakesCtrl.create);
+router.get('/:id/edit', shakesCtrl.edit)
+router.put('/:id', shakesCtrl.update);
 router.delete('/:id', shakesCtrl.delete);
-// router.post('/:id', shakeCtrl.delete);
+
 module.exports = router;

@@ -2,7 +2,7 @@
 
 <section id="show-page">
   <div>Product Type: </div>
-  <div><%= shake.productType %></div>
+  <div><%= shake.product %></div>
   <div>Flavor: </div>
   <div><%= shake.flavor %></div>
   <div>Rating: </div>
@@ -13,8 +13,8 @@
   <div><%= shake.quality ? 'Yes' : 'Nope' %></div>
 </section>
 
-<h2>Reviews</h2>
-<form action="/shakes/<%= shake._id %>/reviews" id="add-review-form" method="POST">
+<h3>Reviews</h3>
+<form action="/reviews/<%= shake._id %>/reviews" id="add-review-form" method="POST">
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -44,6 +44,14 @@
           <td><%= review.createdAt%></td>
           <td><%= review.content %></td>
           <td><%= review.rating %></td>
+          <td><form action="/shakes/<%= review._id %>/reviews?_method=EDIT" id="edit-review-form" method="POST">
+          <input type="submit" value="edit"></input>
+          <td><form action="/shakes/<%= review._id %>/reviews?_method=DELETE" id="delete-review-form" method="POST">  
+          <input type="submit" value="delete"></input>
+          </form>
+          </form>
+        </td>
+        </td>
         </tr>
       <% }) %>
     </tbody>
