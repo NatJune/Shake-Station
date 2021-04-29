@@ -44,13 +44,12 @@
           <td><%= review.createdAt%></td>
           <td><%= review.content %></td>
           <td><%= review.rating %></td>
-          <td><form action="/shakes/<%= review._id %>/reviews?_method=EDIT" id="edit-review-form" method="POST">
-          <input type="submit" value="edit"></input>
           <td><form action="/shakes/<%= review._id %>/reviews?_method=DELETE" id="delete-review-form" method="POST">  
-          <input type="submit" value="delete"></input>
+            <input type="submit" value="delete"></input>
           </form>
-          </form>
-        </td>
+          </td>
+          <td><form action="/shakes/<%= review._id %>/reviews?_method=EDIT" id="edit-review-form" method="PUT">
+          <input type="submit" value="edit"></input>
         </td>
         </tr>
       <% }) %>

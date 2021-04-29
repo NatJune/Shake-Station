@@ -35,7 +35,6 @@ module.exports = {
       if (req.body[key] === '') delete req.body[key];
     }
     
-  
     Shake.create(req.body, function(err, shake) {
       console.log(err)
       if (err) return res.redirect('/shakes/new');
@@ -49,13 +48,13 @@ module.exports = {
    }
    function edit(req, res) {
    Shake.findById(req.params.id, function(err, shake) {
-      if (!shake.user.equals(req.user._id)) return res.redirect('/shakes');
+      if (!shake.params.equals(req.params._id)) return res.redirect('/shakes');
       res.render('shakes/edit', {shake});
     });
   }
   function deleteShake(req,res) {
     Shake.findByIdAndDelete(req.params.id, function(err, shake){
-    res.redirect('/shakes');
+    res.redirect('/shakes/delete', {shake});
     });
     
   }

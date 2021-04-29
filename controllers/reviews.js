@@ -6,7 +6,8 @@ module.exports = {
     create,
     update,
     rating,
-    deleteReview
+    deleteReview,
+    editReview
 };
 
 function create(req, res) {
@@ -47,3 +48,17 @@ console.log(req.params.id, 'istheid')
         
     });
 }
+
+function editReview(req, res) {
+    // const shake = Shake.findById(req.params.id)
+console.log(req.params.id, 'istheid')
+    Shake.findById({'reviews._id':req.params.id}, function(err, shake){
+        const item = shake.reviews.find(review => review.id === `${req.params.id}`)
+        // item.remove()
+        shake.save(function (){
+        res.redirect(`/shakes/${shake._id}`);   
+        })
+        
+    });
+}
+
