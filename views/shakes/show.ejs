@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Product Type: </div>
-  <div><%= shake.product %></div>
+  <div>Product: </div>
+  <div><%= shake.product  %></div>
   <div>Flavor: </div>
   <div><%= shake.flavor %></div>
   <div>Rating: </div>
@@ -36,6 +36,8 @@
         <th>Date</th>
         <th>Review</th>
         <th>Rating</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -44,13 +46,13 @@
           <td><%= review.createdAt%></td>
           <td><%= review.content %></td>
           <td><%= review.rating %></td>
-          <td><form action="/shakes/<%= review_id %>/reviews?_method=DELETE" id="delete-shake-form" method="POST">  
+          <td><form action="/shakes/<%= review._id %>/reviews?_method=DELETE" id="delete-shake-form" method="POST">  
             <input type="submit" value="delete"></input>
           </form>
           </td>
-          <td><form action="/shakes/<%= review_id %>/reviews?_method=EDIT" id="edit-shake-form" method="PUT">
-          <input type="submit" value="edit"></input>
-        </td>
+          <td>
+            <a href="/reviews/<%= review._id%>/edit">Edit</a>
+          </td>
         </tr>
       <% }) %>
     </tbody>

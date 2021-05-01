@@ -2,7 +2,7 @@ const Shake = require('../models/shake');
 const User = require('../models/user');
 
 module.exports = {
-    show
+   show
 };
 
 function show(req, res) {

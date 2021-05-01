@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<form
+  id="add-review-form"
+  method="POST"
+  action="/reviews/<%= review._id %>?_method=PUT">
+  <label>Review:</label>
+  <textarea name="content"><%= review.content %></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+      <% [1, 2, 3, 4, 5].forEach(val => { %>
+        <% if(val === review.rating) { %>
+            <option value="<%= val %>" selected><%= val %></option>
+            <% } else { %>
+            <option value="<%= val %>"><%= val %></option>
+        <% } %>
+      <% }) %>
+  </select>
+  <input type="submit" value="Edit Review" />
+</form>
+
+<%- include('../partials/footer') %>

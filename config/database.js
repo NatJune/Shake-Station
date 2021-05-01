@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const connectionURI = process.env.DATABASE_URI;
 
 const connectionString = 'mongodb+srv://admin:abc1234@cluster0.fxf8b.mongodb.net/shake-station-app?retryWrites=true&w=majority';
 
