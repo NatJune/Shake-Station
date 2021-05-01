@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   googleId: String,
   shakes: [{
     type:mongoose.Schema.ObjectId,
-    ref:'IceCream'
+    ref:'Shakes'
   }]
 }, {
   timestamps: true

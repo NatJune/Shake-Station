@@ -1,5 +1,5 @@
-const shake = require('../models/shake');
 const Shake = require('../models/shake');
+// const Shake = require('../models/shake');
 
 
 module.exports = {
