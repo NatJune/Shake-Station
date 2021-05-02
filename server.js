@@ -2,9 +2,11 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const port = process.env.PORT || 3000;
-// require('./config/database');
-
 require('dotenv').config();
+
+require('./config/database');
+
+
 
 const indexRouter = require('./routes/index');
 const shakesRouter = require('./routes/shakes');
