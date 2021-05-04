@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<div style="text-align:center; max-width: 400px;"><img src="https://bebraveandbloom.com/wp-content/uploads/2018/08/healthy-chocolate-and-banana-protein-shake3.jpg"width="150%"></div>
 
 <section id="show-page">
   <div>Product: </div>
@@ -60,5 +61,10 @@
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
+<script>
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
   
 <%- include('../partials/footer') %>

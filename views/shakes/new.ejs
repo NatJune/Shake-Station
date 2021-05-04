@@ -1,11 +1,16 @@
 <%- include('../partials/header') %>
+<!-- <div style="text-align:center; max-width: 400px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGP4Ypac34fs0kZrv3OHKRZbBSTfvmUVmkXA&usqp=CAU" width="100%"></div> -->
+
+
+
+
 
     <form id="new-form" action="/shakes" method="POST">
-        <label>Product Type:</label>
-            <input type="text" name="productType" required>
+        <label>Product:</label>
+            <input type="text" name="product" required>
         <label>Flavor:</label>
             <input type="text" name="flavor" required>
-        <label>Calories</label>
+        <label>Calories:</label>
             <select name="calories">
                 <option value="100+">100+</option>
                 <option value="200+">200+</option>
@@ -13,15 +18,19 @@
                 <option value="400+">400+</option>
                 <option value="500+">500+</option>
             </select>
-        
-        <label>Price $:</label>
-            <input type="text" name="price" required>
-        <label>Comment:</label>
-            <input type="text" name="comment">
-        <label>Good Quality</label>
-            <input type="checkbox" name="quality" checked required>
+        <label for="price">Price $:</label>
+            <input id="price" type="text" name="price">
+        <label for="comment">Comment:</label>
+            <input id="comment" type="text" name="comment">
+        <label for="Quality"> Quality:</label>
+            <input id="Quality" type="checkbox" name="quality" checked>
             <input type="submit" value="Add Comment">
     </form>
 
+    <script>
+        $(document).ready(function(){
+          $('select').formSelect();
+        });
+    </script>
 <%- include('../partials/footer') %>
    

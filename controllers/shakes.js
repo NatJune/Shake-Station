@@ -10,12 +10,12 @@ module.exports = {
     update,
     edit,
     delete: deleteShake,
-  
   };
   
   function newShake(req, res) {
-    res.render('shakes/new', { title: 'Add Shake' });
+      res.render('shakes/new', { title: 'Add Shake' });
   }
+
   function index(req, res) {
     Shake.find({}, function(err, shakes) {
       console.log(shakes)
@@ -59,7 +59,6 @@ module.exports = {
     
   }
   
-
 
 
 
