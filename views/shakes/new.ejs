@@ -1,9 +1,5 @@
 <%- include('../partials/header') %>
-<!-- <div style="text-align:center; max-width: 400px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGP4Ypac34fs0kZrv3OHKRZbBSTfvmUVmkXA&usqp=CAU" width="100%"></div> -->
-
-
-
-
+<div style="text-align:center;max-width: 600px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS4V_snoPtOaIIj5Cd-ky8pXL5sLAIZhSw4Q&usqp=CAU" alt="Shakes" width="100%"></div>
 
     <form id="new-form" action="/shakes" method="POST">
         <label>Product:</label>
@@ -18,12 +14,26 @@
                 <option value="400+">400+</option>
                 <option value="500+">500+</option>
             </select>
-        <label for="price">Price $:</label>
-            <input id="price" type="text" name="price">
-        <label for="comment">Comment:</label>
-            <input id="comment" type="text" name="comment">
-        <label for="Quality"> Quality:</label>
-            <input id="Quality" type="checkbox" name="quality" checked>
+    <br/>  
+    <p>
+    <label for="price">
+        <input id="price" type="text" name="price">
+        <span>$ Price:</span>
+    </label>
+    </p>
+    <p>
+    <label for="comment">
+        <input id="comment" type="text" name="comment">
+        <span>Comment:</span>
+    </label>
+    </p>
+    <p>
+    <label for="Quality"> 
+        <input id="Quality" type="checkbox" name="quality" checked>    
+        <span>Quality:</span>
+    </label>  
+    </p>       
+    <br/><br/>        
             <input type="submit" value="Add Comment">
     </form>
 
