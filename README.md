@@ -7,7 +7,7 @@ A CRUD web app that will allow you to leave reviews on different protein shakes 
 ## Technologies Used
 - HTML
 - CSS
-- JavaScrit/jQuery
+- JavaScript
 - Node.js
 - MongoDB
 - Mongoose
